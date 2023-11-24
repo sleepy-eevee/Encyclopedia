@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+<!-- this page defines the layout for all the pages under the "entries" folder. you can find the function that this calls back to in views.py -->
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    {{ content|safe }}
+    <a href="{% url 'encyclopedia:editpage' title=title %}" class="btn btn-primary">Edit</a>
+
+{% endblock %}

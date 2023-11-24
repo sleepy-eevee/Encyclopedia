@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+<!-- search_result is defined in views.py -->
+    {% for result in search_result %}
+        <li><a href="wiki/{{ result }}">{{ result }}</a></li>
+    {% endfor %}
+    <h1>{{ no_result }}</h1>
+{% endblock %}
